@@ -1,0 +1,20 @@
+*.jar
+*.war
+*.ear
+
+classes
+.DS_Store
+target/
+
+### eclipse
+.settings
+.classpath
+.project
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+.*
