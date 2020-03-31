@@ -31,6 +31,8 @@ public class BubbleSort {
     /**
      * 相邻比较
      * 如果相邻多位都比当前值小, 则当前值一次移多个位置
+     * <p>
+     * 相当于: 冒泡+插入
      *
      * @param array
      * @param i
