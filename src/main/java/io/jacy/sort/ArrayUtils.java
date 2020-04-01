@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author Jacy
  */
-public class SortUtils {
+public class ArrayUtils {
 
     /**
      * 初始化指定长度的数组

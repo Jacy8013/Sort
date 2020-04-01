@@ -27,7 +27,7 @@ public class SelectionSort {
                 minValuePos = array[j] < array[minValuePos] ? j : minValuePos;
             }
 
-            SortUtils.swap(array, i, minValuePos);
+            ArrayUtils.swap(array, i, minValuePos);
         }
     }
 
@@ -62,12 +62,12 @@ public class SelectionSort {
             }
         }
 
-        SortUtils.swap(array, i, minValuePos);
+        ArrayUtils.swap(array, i, minValuePos);
 
         // 情况1: i位置的数刚好是最大值, 被65行最小值交换后, 后面再交换就会出错
         // 情况2: i位置的数刚好是最大值, length-1-i位置刚好是最小值, 65行交换后, 后面再交换会再把它们交换回来
         // 因此需要更新最大值位置为交换后的位置
         maxValuePos = i == maxValuePos ? minValuePos : maxValuePos;
-        SortUtils.swap(array, array.length - 1 - i, maxValuePos);
+        ArrayUtils.swap(array, array.length - 1 - i, maxValuePos);
     }
 }

@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 public class CheckUtils {
     public static void testSortTimes(Consumer<int[]> consumer, int length, int times) {
         for (int i = 0; i < Math.max(times, 1); i++) {
-            int[] original = SortUtils.initArray(length);
+            int[] original = ArrayUtils.initArray(length);
 
             int[] dest = new int[original.length];
             System.arraycopy(original, 0, dest, 0, original.length);
