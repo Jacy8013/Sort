@@ -4,9 +4,29 @@ package io.jacy.sort;
  * @author Jacy
  */
 public class InsertionSort {
+    /**
+     * 调用最优版本
+     *
+     * @param array
+     */
     public static void sort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             insert(array, i);
+        }
+    }
+
+    /**
+     * 插入排序默认版本, 当前元素与前1个位置的依次比较, 每次都交换
+     *
+     * @param array
+     */
+    public static void sortDefault(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            for (int j = i; j >= 0; j--) {
+                if (array[j] < array[j - 1]) {
+                    ArrayUtils.swap(array, j, j - 1);
+                }
+            }
         }
     }
 
@@ -32,7 +52,6 @@ public class InsertionSort {
                 array[j + 1] = supposeMin;
                 break;
             }
-
         }
     }
 }

@@ -8,9 +8,6 @@ package io.jacy.sort;
 public class SelectionSort {
 
     public static void sort(int[] array) {
-        // 默认版本
-        // sortMin(array);
-
         // 一次选出最大最小两个值做排序
         sortMinAndMax(array);
     }
@@ -20,7 +17,7 @@ public class SelectionSort {
      *
      * @param array
      */
-    private static void sortMin(int[] array) {
+    public static void sortDefault(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int minValuePos = i;
             for (int j = i + 1; j < array.length; j++) {
