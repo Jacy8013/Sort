@@ -6,18 +6,12 @@ package io.jacy.sort;
  * @author Jacy
  */
 public class MergeSort {
-    public static void main(String[] args) {
-        int[] array = ArrayUtils.initArray(20);
-        ArrayUtils.print(array);
-        sort(array);
-        ArrayUtils.print(array);
-    }
-
     public static void sort(int[] array) {
         merge(array);
     }
 
     private static void merge(int[] array) {
+        // 小于2个就可以不用再拆了
         if (array.length <= 2) {
             if (array[0] > array[array.length - 1]) {
                 ArrayUtils.swap(array, 0, array.length - 1);
@@ -25,7 +19,7 @@ public class MergeSort {
             return;
         }
 
-
+        // 对半拆分
         int half = array.length / 2;
 
         // 左边一半数组
