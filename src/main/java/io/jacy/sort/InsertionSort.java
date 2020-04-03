@@ -1,6 +1,10 @@
 package io.jacy.sort;
 
 /**
+ * 插入排序
+ * <p>
+ * 原理: 从第1个元素开始, 依次与前面的所有元素比较, 当前无素较小就往前挪1位, 一直挪到所有比自己大的元素前面为止
+ *
  * @author Jacy
  */
 public class InsertionSort {

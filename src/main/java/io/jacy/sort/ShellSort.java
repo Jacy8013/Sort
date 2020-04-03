@@ -1,6 +1,8 @@
 package io.jacy.sort;
 
 /**
+ * 希尔排序
+ *
  * @author Jacy
  */
 public class ShellSort {
@@ -28,6 +30,7 @@ public class ShellSort {
 
     /**
      * 优化版本, 从插入排序的优化版本改过来
+     * gap = length / 2
      *
      * @param array
      */
