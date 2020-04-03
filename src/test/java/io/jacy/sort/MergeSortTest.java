@@ -5,6 +5,7 @@ import org.junit.Test;
 public class MergeSortTest {
     @Test
     public void testSort() {
+        CheckUtils.testSortTimes(MergeSort::merge, 1001, 100);
         CheckUtils.testSortTimes(MergeSort::sort, 1000, 100);
     }
 }
