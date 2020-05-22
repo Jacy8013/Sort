@@ -73,7 +73,8 @@ public class MergeSort {
         sort(array, mid + 1, end);
 
         // 合并
-        merge(array, start, mid + 1, end);
+//        merge(array, start, mid + 1, end);
+        merge2(array, start, mid, end);
     }
 
     /**
@@ -102,5 +103,50 @@ public class MergeSort {
         }
 
         System.arraycopy(temp, 0, array, leftStartIndex, temp.length);
+    }
+
+
+    private static void merge2(int[] array, int l, int m, int r) {
+        int[] temp = new int[r - l + 1];
+        int ti = 0;
+
+        int left = l;
+        int right = m + 1;
+        while (left <= m && right <= r) {
+            temp[ti++] = array[left] <= array[right] ? array[left++] : array[right++];
+        }
+        while (left <= m) {
+            temp[ti++] = array[left++];
+        }
+        while (right <= r) {
+            temp[ti++] = array[right++];
+        }
+        System.arraycopy(temp, 0, array, l, temp.length);
+    }
+
+    public static void sortIterator(int[] array) {
+        if (array.length <= 1) {
+            return;
+        }
+
+        int size = 1;
+        while (size < array.length) {
+            int l = 0;
+            while (l < array.length) {
+                int m = l + size - 1;
+                if (m >= array.length) {
+                    break;
+                }
+                int r = Math.min(m + size, array.length - 1);
+                merge2(array, l, m, r);
+                l = r + 1;
+            }
+
+            // 保护代码: 防止超出最大边界
+            if (size > array.length / 2) {
+                break;
+            }
+            size <<= 1;
+        }
     }
 }
