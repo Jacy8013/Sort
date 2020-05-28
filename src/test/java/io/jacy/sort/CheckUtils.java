@@ -12,6 +12,7 @@ public class CheckUtils {
 
             int[] dest = new int[original.length];
             System.arraycopy(original, 0, dest, 0, original.length);
+            System.out.println("== " + Arrays.toString(original));
 
             Arrays.sort(original);
             System.out.println(Arrays.toString(original));
