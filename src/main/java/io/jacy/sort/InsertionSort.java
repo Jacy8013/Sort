@@ -26,7 +26,7 @@ public class InsertionSort {
      */
     public static void sortDefault(int[] array) {
         for (int i = 1; i < array.length; i++) {
-            for (int j = i; j >= 0; j--) {
+            for (int j = i; j > 0; j--) {
                 if (array[j] < array[j - 1]) {
                     ArrayUtils.swap(array, j, j - 1);
                 }

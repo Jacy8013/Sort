@@ -23,9 +23,8 @@ public class QuickSort {
      */
     private static int partition1(int[] array, int l, int r) {
         int lessIndex = l - 1;
-        int n = array[r];
         for (int i = l; i < r; i++) {
-            if (array[i] <= n) {
+            if (array[i] <= array[r]) {
                 ArrayUtils.swap(array, ++lessIndex, i);
             }
         }
@@ -61,11 +60,10 @@ public class QuickSort {
         int moreIndex = r;
 
         int i = l;
-        int n = array[r];
         while (i < moreIndex) {
-            if (array[i] < n) {
+            if (array[i] < array[r]) {
                 ArrayUtils.swap(array, ++lessIndex, i++);
-            } else if (array[i] > n) {
+            } else if (array[i] > array[r]) {
                 ArrayUtils.swap(array, --moreIndex, i);
             } else {
                 i++;
@@ -87,10 +85,32 @@ public class QuickSort {
     }
 
 
+    public static void sort3(int[] array) {
+        sort3(array, 0, array.length - 1);
+    }
+
+    private static void sort3(int[] array, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+
+        ArrayUtils.swap(array, l + (int) (Math.random() * (r - l + 1)), r);
+        int[] lessAndMore = partition2(array, l, r);
+        sort2(array, l, lessAndMore[0]);
+        sort2(array, lessAndMore[1] + 1, r);
+    }
+
+
     public static void main(String[] args) {
         int[] array = new int[]{4, 6, 2, 1, 3, 9, 9, 2, 6, 2};
-        System.out.println(Arrays.toString(array));
-        sort2(array, 0, array.length - 1);
+//        System.out.println(Arrays.toString(array));
+//        sort3(array, 0, array.length - 1);
+//        System.out.println(Arrays.toString(array));
+//
+//        // [0...1) * 4 + 2 => [0...3] + 2 => [2...5]
+//        System.out.println((int) ((5 - 2 + 1) * Math.random()) + 2);
+
+        sort1(array);
         System.out.println(Arrays.toString(array));
     }
 }
